@@ -8,7 +8,7 @@ import IconSortDesc from '../../images/IconSortDesc'
 
 import { fetchPosts } from './JSONPlaceholderAction'
 
-const COLOR = ["#e74c3c", "#3498db", "#9b59b6", "#2ecc71", "#e67e22"]
+const COLORS = ["#e74c3c", "#3498db", "#9b59b6", "#2ecc71", "#e67e22"]
 
 class JSONPlaceholder extends Component {
     constructor() {
@@ -79,26 +79,26 @@ class JSONPlaceholder extends Component {
             if(currentUserId !== post.userId){
                 if(groupedPost.length > 0){
                     result.push(
-                        <div className="sticky-group"> {groupedPost} </div>
+                        <div className="sticky-group" key={`group${currentUserId}`}> {groupedPost} </div>
                     )
                     groupedPost = []
                 }
                 
-                groupedPost.push(<div className="sticky-username"> {post.username}</div>)
+                groupedPost.push(<div className="sticky-username" key={`user${currentUserId}`}> {post.username}</div>)
                 currentUserId = post.userId
             } 
 
             groupedPost.push(
-                <div className="sticky-content"key= {index}> 
-                    <div className="border-left" style={{color:COLOR[index%5]}}/>
-                    <div className="title">{post.title} </div>
-                    <div className="body">{post.body} </div>
+                <div className="sticky-content" key={index}> 
+                    <div className="border-left" style={{color:COLORS[index%5]}}/>
+                    <div className="title"> {post.title} </div>
+                    <div className="body"> {post.body} </div>
                 </div>
             )   
         }) 
 
         result.push(
-            <div> {groupedPost} </div>
+            <div className="sticky-group" key={`group${currentUserId}`}> {groupedPost} </div>
         )
 
         return result
