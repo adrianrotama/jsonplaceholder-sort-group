@@ -1,7 +1,12 @@
 {
   "name": "jsonplaceholder-group-sort",
   "version": "0.1.0",
-  "private": true,
+  "description": "JSONPlaceholderTypicode API Consume with sort and group",
+  "author": "Adrian Rotama",
+  "engines": {
+    "node": "6.0.0",
+    "npm": "4.0.3"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "lodash": "^4.17.4",
@@ -13,9 +18,7 @@
     "redux": "^3.6.0",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.15.3",
-    "redux-thunk": "^2.2.0"
-  },
-  "devDependencies": {
+    "redux-thunk": "^2.2.0",
     "react-scripts": "1.0.7"
   },
   "scripts": {

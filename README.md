@@ -1,5 +1,7 @@
 # JSONPlaceholder Typicode Sort & Group By Username
 
+demo on https://jsonplaceholder-sort-group.herokuapp.com/
+
 A simple project that able to :
 
 * Get a list of post from JSONPlaceholder.typicode API
